@@ -158,7 +158,7 @@ class BonesCommandLine
     {
         $arguments = $this->arguments();
 
-        return ($command === ($arguments[0]??""));
+        return ($command === ($arguments[0] ?? ""));
     }
 
     /**
@@ -175,7 +175,7 @@ class BonesCommandLine
         // strip the application name
         array_shift($argv);
 
-        return $index ? ($argv[$index]??null) : $argv;
+        return $index ? ($argv[$index] ?? null) : $argv;
     }
 
     protected function isHelp()
@@ -439,8 +439,10 @@ class BonesCommandLine
 
         // remove all composer
         $files = array_filter(array_map(function ($e) {
-            if (false !== strpos($e, "node_modules") ||
-                false !== strpos($e, "vendor/wpbones/wpbones/src/Console/bin/bones")) {
+            if (
+                false !== strpos($e, "node_modules") ||
+                false !== strpos($e, "vendor/wpbones/wpbones/src/Console/bin/bones")
+            ) {
                 return false;
             }
 
