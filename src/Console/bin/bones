@@ -26,7 +26,7 @@ class BonesCommandLine
      *
      * @var string
      */
-    protected $plginName;
+    protected $pluginName;
 
     /**
      * Plugin namespace.
@@ -60,7 +60,7 @@ class BonesCommandLine
     {
         list($pluginName, $namespace) = explode(",", file_get_contents('namespace'));
 
-        $this->plginName = $pluginName;
+        $this->pluginName = $pluginName;
         $this->namespace = $namespace;
 
         $this->boot();
@@ -499,7 +499,7 @@ class BonesCommandLine
             $this->line("\nUsage:");
             $this->info("  install <plugin name>\n");
             $this->line("Arguments:");
-            $this->info("  plugin name\tThe name of plugin. Add quotes if the plugin name containes spaces.");
+            $this->info("  plugin name\tThe name of plugin. Add quotes if the plugin name contains spaces.");
             exit(0);
         } else {
             $name = $argv[1];
@@ -1133,7 +1133,7 @@ class BonesCommandLine
         } // make:cpy {className}
         elseif ($this->command('make:cpt')) {
             $this->createCustomPostType($this->arguments(1));
-        } // make:shortocde {className}
+        } // make:shortcode {className}
         elseif ($this->command('make:shortcode')) {
             $this->createShortcode($this->arguments(1));
         } // make:provider {className}
