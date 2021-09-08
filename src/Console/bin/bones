@@ -235,7 +235,8 @@ class BonesCommandLine
 
     ';
 
-        $this->info("\nBones Version " . self::VERSION . "\n");
+        $this->info("\nBones Version " . self::VERSION);
+        $this->info("WordPress Version " . get_bloginfo('version') . "\n");
         $this->info("Usage:\n");
         $this->line(" command [options] [arguments]");
         $this->info("\nAvailable commands:");
